@@ -69,7 +69,7 @@ no + /{<CR>Nv%zf
 no <S-m> :cp<CR>
 no <C-m> :cw<CR>
 no \q :set hlsearch!<CR>
-no \g :ToggleGitGutter
+no \g :ToggleGitGutter<CR>
 
 " highlight overlong lines
 highlight rightMargin guifg=lightred
