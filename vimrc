@@ -51,6 +51,8 @@ set smartcase
 set tabstop=4
 set textwidth=100
 
+let g:snips_trigger_key='<C-CR>'
+
 " mappings
 vm < <gv
 vm > >gv
@@ -80,9 +82,11 @@ highlight clear SignColumn
 " commenting
 au BufEnter,FileType *.h vn # :s/^/\/\//<CR>gv:s/^\/\/\/\/ \@!//<CR>
 au BufEnter,FileType *.cpp vn # :s/^/\/\//<CR>gv:s/^\/\/\/\/ \@!//<CR>
+au BufEnter,FileType *.css vn # :s/^/\/\//<CR>gv:s/^\/\/\/\/ \@!//<CR>
 au BufEnter,FileType *.py vn # :s/^/#/<CR>gv:s/^## \@!//<CR>
 au BufEnter,FileType *.tex vn # :s/^/%/<CR>gv:s/^%% \@!//<CR>
 au BufEnter,FileType *.m vn # :s/^/%/<CR>gv:s/^%% \@!//<CR>
+au BufEnter,FileType *.html vn # :s/^\(\s*\)\(.*\)$/\1<!--\2-->/<CR>:s/<!--<!--//<CR>:s/-->-->/<CR>
 
 " enable doxygen highlighting
 au BufEnter,FileType *.cpp set syntax=cpp.doxygen

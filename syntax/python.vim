@@ -284,7 +284,8 @@ if exists("python_highlight_builtin_funcs") && python_highlight_builtin_funcs !=
   syn keyword pythonBuiltinFunc	outer floor ceil mod cumsum multivariate_normal repeat asarray
   syn keyword pythonBuiltinFunc	vstack hstack ndarray isscalar isfortran imag iterable hsplit
   syn keyword pythonBuiltinFunc	vectorize logseries median percentile isreal logspace slogdet
-  syn keyword pythonBuiltinFunc	corrcoef log2 log10 empty histogram2d double dstack
+  syn keyword pythonBuiltinFunc	corrcoef log2 log10 empty histogram2d double dstack convolve
+  syn keyword pythonBuiltinFunc	dirichlet
 
   if exists("python_print_as_function") && python_print_as_function != 0
       syn keyword pythonBuiltinFunc	print
