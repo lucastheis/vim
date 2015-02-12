@@ -16,6 +16,10 @@ else
 	colorscheme ir_black
 end
 
+" let g:ycm_server_use_vim_stdout = 1
+let g:ycm_server_log_level = 'debug'
+let g:ycm_global_ycm_extra_conf = '/Users/lucas/.ycm_extra_conf.py'
+
 " settings
 execute pathogen#infect()
 syntax on
@@ -36,9 +40,10 @@ set foldmethod=manual
 set formatoptions+=a
 set ignorecase
 set lcs=tab:››,trail:·
-set nolist
+set list
 set nocindent
 set nocompatible
+set noexpandtab
 set nohls
 set noswapfile
 set nowrap
@@ -50,6 +55,8 @@ set shiftwidth=4
 set smartcase
 set tabstop=4
 set textwidth=100
+
+let g:snips_trigger_key='<C-CR>'
 
 " mappings
 vm < <gv
@@ -80,9 +87,11 @@ highlight clear SignColumn
 " commenting
 au BufEnter,FileType *.h vn # :s/^/\/\//<CR>gv:s/^\/\/\/\/ \@!//<CR>
 au BufEnter,FileType *.cpp vn # :s/^/\/\//<CR>gv:s/^\/\/\/\/ \@!//<CR>
+au BufEnter,FileType *.css vn # :s/^/\/\//<CR>gv:s/^\/\/\/\/ \@!//<CR>
 au BufEnter,FileType *.py vn # :s/^/#/<CR>gv:s/^## \@!//<CR>
 au BufEnter,FileType *.tex vn # :s/^/%/<CR>gv:s/^%% \@!//<CR>
 au BufEnter,FileType *.m vn # :s/^/%/<CR>gv:s/^%% \@!//<CR>
+au BufEnter,FileType *.html vn # :s/^\(\s*\)\(.*\)$/\1<!--\2-->/<CR>:s/<!--<!--//<CR>:s/-->-->/<CR>
 
 " enable doxygen highlighting
 au BufEnter,FileType *.cpp set syntax=cpp.doxygen
