@@ -77,6 +77,7 @@ no <S-m> :cp<CR>
 no <C-m> :cw<CR>
 no \q :set hlsearch!<CR>
 no \g :ToggleGitGutter<CR>
+no <C-n> :NERDTreeToggle<CR>
 
 " highlight overlong lines
 highlight rightMargin guifg=lightred
@@ -93,6 +94,9 @@ au BufEnter,FileType *.tex vn # :s/^/%/<CR>gv:s/^%% \@!//<CR>
 au BufEnter,FileType *.m vn # :s/^/%/<CR>gv:s/^%% \@!//<CR>
 au BufEnter,FileType *.html vn # :s/^\(\s*\)\(.*\)$/\1<!--\2-->/<CR>:s/<!--<!--//<CR>:s/-->-->/<CR>
 
-" enable doxygen highlighting
+" enable doxygen syntax highlighting
 au BufEnter,FileType *.cpp set syntax=cpp.doxygen
 au BufEnter,FileType *.h set syntax=cpp.doxygen
+
+" enable protobuf syntax highlighting
+au BufEnter,FileType *.prototxt set syntax=proto
