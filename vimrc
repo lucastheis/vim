@@ -1,3 +1,5 @@
+execute pathogen#infect()
+
 " gui
 if has("gui_running")
 	set guioptions-=T
@@ -11,17 +13,14 @@ if has("gui_running")
 	au GUIEnter * win 120 40
 
 	" syntax highlighting
-	colorscheme Tomorrow-Night-Bright
+	colorscheme nord
+	hi VertSplit guibg=bg guifg=gray15
+	set fillchars=vert:\│
 else
 	colorscheme ir_black
 end
 
-" let g:ycm_server_use_vim_stdout = 1
-let g:ycm_server_log_level = 'debug'
-let g:ycm_global_ycm_extra_conf = '/Users/lucas/.ycm_extra_conf.py'
-
 " settings
-execute pathogen#infect()
 syntax on
 filetype plugin on
 filetype indent on
@@ -32,7 +31,7 @@ set backupdir=/tmp
 set cursorline
 set directory=/tmp
 set completeopt=longest,menuone
-set complete=.,w,b,u,t
+set complete=.,w,b,u,t,k
 set copyindent
 set encoding=utf-8
 set fileencoding=utf-8
@@ -43,7 +42,7 @@ set lcs=tab:››,trail:·
 set list
 set nocindent
 set nocompatible
-set noexpandtab
+set expandtab
 set nohls
 set noswapfile
 set nowrap
@@ -51,12 +50,20 @@ set number
 set path=./**,../include/**,/usr/include/**,/opt/local/include/**
 set ruler
 set nospell
-set shiftwidth=4
+set shiftwidth=2
 set smartcase
-set tabstop=4
+set tabstop=2
 set textwidth=100
 
 let g:snips_trigger_key='<C-CR>'
+let g:python_recommended_style=0
+let python_slow_sync=1
+
+" dictionaries
+au FileType python set dictionary+=/Users/ltheis/.vim/dictionaries/python.txt
+au FileType python set dictionary+=/Users/ltheis/.vim/dictionaries/tensorflow.txt
+au FileType python set isk+=.
+
 
 " mappings
 vm < <gv
@@ -78,12 +85,17 @@ no <C-m> :cw<CR>
 no \q :set hlsearch!<CR>
 no \g :ToggleGitGutter<CR>
 no <C-n> :NERDTreeToggle<CR>
+no <D-{> gT
+no <D-}> gt
 
 " highlight overlong lines
 highlight rightMargin guifg=lightred
 
-" 
+" do not highlight sign column
 highlight clear SignColumn
+
+" highlight operators and other stuff in Python
+let g:python_highlight_all = 1
 
 " commenting
 au BufEnter,FileType *.h vn # :s/^/\/\//<CR>gv:s/^\/\/\/\/ \@!//<CR>
