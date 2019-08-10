@@ -12,6 +12,8 @@ if has("gui_running")
 
 	" syntax highlighting
 	colorscheme Tomorrow-Night-Bright
+	hi VertSplit guibg=bg guifg=gray15
+	set fillchars=vert:\│
 else
 	colorscheme ir_black
 end
@@ -57,6 +59,7 @@ set tabstop=4
 set textwidth=100
 
 let g:snips_trigger_key='<C-CR>'
+let g:python_recommended_style=0
 
 " mappings
 vm < <gv
