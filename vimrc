@@ -13,18 +13,19 @@ Plugin 'ycm-core/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-python/python-syntax'
 Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-fugitive'
 call vundle#end()
 filetype plugin indent on
 
 " gui
 if has("gui_running")
 	set guioptions-=TrRlLt
-	set gfn=Menlo\ Regular:h12
+	set guifont=Menlo\ for\ Powerline:h12   " https://github.com/abertsch/Menlo-for-Powerline
 	set columns=120
 	au GUIEnter * win 120 40
 
 	" syntax highlighting
-	colorscheme Tomorrow-Night-Bright
+	colorscheme jellybeans
 	hi VertSplit guibg=bg guifg=gray15
 	set fillchars=vert:\│
 else
@@ -102,6 +103,9 @@ hi GitGutterAdd ctermfg=2 guifg=green
 hi GitGutterChange ctermfg=3 guifg=yellow
 hi GitGutterDelete ctermfg=1 guifg=red
 hi GitGutterChangeDelete ctermfg=4 guifg=yellow
+
+" vim-airline
+let g:airline_powerline_fonts = 1
 
 " commenting
 au BufEnter,FileType *.h vn # :s/^/\/\//<CR>gv:s/^\/\/\/\/ \@!//<CR>
