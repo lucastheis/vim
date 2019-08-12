@@ -13,7 +13,6 @@ Plugin 'ycm-core/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-python/python-syntax'
 Plugin 'tpope/vim-abolish'
-Plugin 'arcticicestudio/nord-vim'
 call vundle#end()
 filetype plugin indent on
 
