@@ -1,11 +1,24 @@
+" plugins
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'godlygeek/tabular'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-surround'
+Plugin 'ycm-core/YouCompleteMe'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-python/python-syntax'
+Plugin 'tpope/vim-abolish'
+call vundle#end()
+filetype plugin indent on
+
 " gui
 if has("gui_running")
-	set guioptions-=T
-	set guioptions-=r
-	set guioptions-=R
-	set guioptions-=l
-	set guioptions-=L
-	set guioptions-=t
+	set guioptions-=TrRlLt
 	set gfn=Menlo\ Regular:h12
 	set columns=120
 	au GUIEnter * win 120 40
@@ -18,15 +31,8 @@ else
 	colorscheme ir_black
 end
 
-" let g:ycm_server_use_vim_stdout = 1
-let g:ycm_server_log_level = 'debug'
-let g:ycm_global_ycm_extra_conf = '/Users/lucas/.ycm_extra_conf.py'
-
 " settings
-execute pathogen#infect()
 syntax on
-filetype plugin on
-filetype indent on
 set antialias
 set autoindent
 set backspace=2
@@ -58,8 +64,9 @@ set smartcase
 set tabstop=4
 set textwidth=100
 
-let g:snips_trigger_key='<C-CR>'
-let g:python_recommended_style=0
+" python (ftplugin, python-syntax)
+let g:python_recommended_style = 0
+let g:python_highlight_operators = 1
 
 " mappings
 vm < <gv
@@ -79,14 +86,22 @@ no + /{<CR>Nv%zf
 no <S-m> :cp<CR>
 no <C-m> :cw<CR>
 no \q :set hlsearch!<CR>
-no \g :ToggleGitGutter<CR>
+no \g :GitGutterToggle<CR>
 no <C-n> :NERDTreeToggle<CR>
 
 " highlight overlong lines
 highlight rightMargin guifg=lightred
 
-" 
-highlight clear SignColumn
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<C-CR>"
+
+" GitGutter
+hi clear SignColumn
+autocmd BufWritePost * GitGutter
+hi GitGutterAdd ctermfg=2 guifg=green
+hi GitGutterChange ctermfg=3 guifg=yellow
+hi GitGutterDelete ctermfg=1 guifg=red
+hi GitGutterChangeDelete ctermfg=4 guifg=yellow
 
 " commenting
 au BufEnter,FileType *.h vn # :s/^/\/\//<CR>gv:s/^\/\/\/\/ \@!//<CR>
@@ -96,6 +111,7 @@ au BufEnter,FileType *.py vn # :s/^/#/<CR>gv:s/^## \@!//<CR>
 au BufEnter,FileType *.tex vn # :s/^/%/<CR>gv:s/^%% \@!//<CR>
 au BufEnter,FileType *.m vn # :s/^/%/<CR>gv:s/^%% \@!//<CR>
 au BufEnter,FileType *.html vn # :s/^\(\s*\)\(.*\)$/\1<!--\2-->/<CR>:s/<!--<!--//<CR>:s/-->-->/<CR>
+au BufEnter,FileType *.vimrc vn # :s/^/"/<CR>gv:s/^"" \@!//<CR>
 
 " enable doxygen syntax highlighting
 au BufEnter,FileType *.cpp set syntax=cpp.doxygen
