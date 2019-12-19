@@ -60,6 +60,7 @@ set number
 set path=./**,../include/**,/usr/include/**,/opt/local/include/**
 set ruler
 set nospell
+set shell=/bin/zsh
 set shiftwidth=4
 set smartcase
 set tabstop=4
