@@ -11,10 +11,6 @@ Compile YCM for autocompletion:
 	cd ~/.vim/bundle/YouCompleteMe
 	./install.py --clang-completer
 
-Link to vimrc:
-
-	ln -s ~/.vim/vimrc ~/.vimrc
-
 Install this version of the Menlo font (patched to work with vim-airline):
 
 	https://github.com/abertsch/Menlo-for-Powerline
