@@ -48,6 +48,7 @@ set fileencoding=utf-8
 set foldmethod=manual
 set formatoptions+=a
 set ignorecase
+set incsearch
 set lcs=tab:››,trail:·
 set list
 set nocindent
@@ -69,6 +70,9 @@ set textwidth=100
 " python (ftplugin, python-syntax)
 let g:python_recommended_style = 0
 let g:python_highlight_operators = 1
+let g:python_highlight_class_vars = 1
+let g:python_highlight_operators = 1
+let g:python_highlight_builtin_objs = 1
 
 " mappings
 vm < <gv
@@ -111,6 +115,7 @@ let g:airline_powerline_fonts = 1
 " commenting
 au BufEnter,FileType *.h vn # :s/^/\/\//<CR>gv:s/^\/\/\/\/ \@!//<CR>
 au BufEnter,FileType *.cpp vn # :s/^/\/\//<CR>gv:s/^\/\/\/\/ \@!//<CR>
+au BufEnter,FileType *.hpp vn # :s/^/\/\//<CR>gv:s/^\/\/\/\/ \@!//<CR>
 au BufEnter,FileType *.css vn # :s/^/\/\//<CR>gv:s/^\/\/\/\/ \@!//<CR>
 au BufEnter,FileType *.py vn # :s/^/#/<CR>gv:s/^## \@!//<CR>
 au BufEnter,FileType *.sh vn # :s/^/#/<CR>gv:s/^## \@!//<CR>
