@@ -20,7 +20,7 @@ filetype plugin indent on
 " gui
 if has("gui_running")
 	set guioptions-=TrRlLt
-	set guifont=Menlo\ for\ Powerline:h12   " https://github.com/abertsch/Menlo-for-Powerline
+	set guifont=MenloForPowerline-Regular:h14  " https://github.com/abertsch/Menlo-for-Powerline
 	set columns=120
 	au GUIEnter * win 120 40
 
@@ -94,6 +94,8 @@ no <C-m> :cw<CR>
 no \q :set hlsearch!<CR>
 no \g :GitGutterToggle<CR>
 no <C-n> :NERDTreeToggle<CR>
+no mT :-tabmove<CR>
+no mt :+tabmove<CR>
 
 " highlight overlong lines
 highlight rightMargin guifg=lightred
