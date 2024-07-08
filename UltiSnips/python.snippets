@@ -2,12 +2,17 @@ snippet main
 import sys
 ${1}
 def main(argv):
-	
+    
 
-	return 0
+    return 0
 
 
 
 if __name__ == '__main__':
-	sys.exit(main(sys.argv))
+    sys.exit(main(sys.argv))
+endsnippet
+
+snippet pdb
+import pdb
+pdb.set_trace()
 endsnippet
