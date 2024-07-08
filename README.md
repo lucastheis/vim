@@ -14,3 +14,10 @@ Compile YCM for autocompletion:
 Install this version of the Menlo font (patched to work with vim-airline):
 
 	https://github.com/abertsch/Menlo-for-Powerline
+
+To update plugins, run:
+
+	git submodule update --recursive
+	:PluginUpdate
+
+You will likely need to recompile YCM.

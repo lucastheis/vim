@@ -2,18 +2,18 @@
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'godlygeek/tabular'
 Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-surround'
-Plugin 'ycm-core/YouCompleteMe'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-python/python-syntax'
+Plugin 'godlygeek/tabular'
+Plugin 'honza/vim-snippets'
+Plugin 'mdomke/python-syntax'
+Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'vim-airline/vim-airline'
+Plugin 'ycm-core/YouCompleteMe'
 call vundle#end()
 filetype plugin indent on
 
