@@ -65,10 +65,16 @@ set shell=/bin/zsh
 set shiftwidth=4
 set smartcase
 set tabstop=4
+set softtabstop=4
 set textwidth=100
 
 " python (ftplugin, python-syntax)
-let g:python_recommended_style = 0
+if !exists('g:python_indent')
+	let g:python_indent = {}
+endif
+let g:python_indent.closed_paren_align_last_line = v:false
+let g:pyindent_open_paren = 'shiftwidth()'
+let g:python_recommended_style = 1
 let g:python_highlight_operators = 1
 let g:python_highlight_class_vars = 1
 let g:python_highlight_operators = 1
@@ -111,6 +117,9 @@ hi GitGutterAdd ctermfg=2 guifg=green
 hi GitGutterChange ctermfg=3 guifg=yellow
 hi GitGutterDelete ctermfg=1 guifg=red
 hi GitGutterChangeDelete ctermfg=4 guifg=yellow
+
+" YouCompleteMe
+let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
 
 " vim-airline
 let g:airline_powerline_fonts = 1
