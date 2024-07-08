@@ -73,6 +73,7 @@ let g:python_highlight_operators = 1
 let g:python_highlight_class_vars = 1
 let g:python_highlight_operators = 1
 let g:python_highlight_builtin_objs = 1
+au FileType python setlocal expandtab
 
 " mappings
 vm < <gv
