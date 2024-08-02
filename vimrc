@@ -12,6 +12,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
+Plugin 'ryanoasis/vim-devicons'
 Plugin 'vim-airline/vim-airline'
 Plugin 'ycm-core/YouCompleteMe'
 call vundle#end()
@@ -19,8 +20,8 @@ filetype plugin indent on
 
 " gui
 if has("gui_running")
-	set guioptions-=TrRlLt
-	set guifont=MenloForPowerline-Regular:h14  " https://github.com/abertsch/Menlo-for-Powerline
+	set guioptions=egm
+	set guifont=JetBrainsMonoNLNFM-Regular:h14  " https://github.com/ryanoasis/nerd-fonts/releases
 	set columns=120
 	au GUIEnter * win 120 40
 
